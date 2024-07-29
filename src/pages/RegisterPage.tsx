@@ -42,16 +42,17 @@ const RegisterPage:React.FC<object> = () => {
 
     return(
         <>
-            <form className={`flex flex-col gap-y-3 place-content-center justify-center py-[50%]`} onSubmit={handleRegisterUser}>
+            <form className={`flex flex-col gap-y-3 place-content-center justify-center py-[50%]`}
+                  onSubmit={handleRegisterUser}>
                 <input placeholder='Username' className={`outline-0 w-3/4 mx-auto h-11 pl-2`}
-                       onChange={(event)=>setUsername(event.currentTarget.value)}
+                       onChange={(event) => setUsername(event.currentTarget.value)}
                        value={username}/>
                 <input placeholder='Email' className={`outline-0 w-3/4 mx-auto h-11 pl-2`}
                        onChange={handleEmailFieldChange}
                        value={email}/>
                 {error && <p className={`w-3/4 mx-auto pl-2 text-[color:var(--color-dark)]`}>{error}</p>}
                 <input placeholder='Password' className={`outline-0 w-3/4 mx-auto h-11 pl-2`}
-                       onChange={(event)=> setPassword(event.currentTarget.value)}
+                       onChange={(event) => setPassword(event.currentTarget.value)}
                        value={password} type="password"/>
                 <button
                     className={`h-10 w-3/4 mx-auto text-[color:var(--color-white)] 
@@ -60,7 +61,10 @@ const RegisterPage:React.FC<object> = () => {
                     disabled={isDisabled}
                 >Register
                 </button>
-                <Link className={`mx-auto mt-4 cursor-pointer text-[color:var(--color-dark)]`} to='/auth'>Already registered? Login here</Link>
+                <Link className={`mx-auto mt-4 cursor-pointer text-[color:var(--color-dark)]`} to='/auth'>Already
+                    registered? Login here</Link>
+                <p className='mx-auto mt-4 cursor-pointer text-[color:var(--color-dark)] text-xs font-light'>Powered by
+                    React.js</p>
             </form>
         </>
     )
